@@ -258,6 +258,7 @@ static void __exit limit_exit(void)
 }
 
 EXPORT_SYMBOL(trampoline);
+EXPORT_SYMBOL(v2p);
 
 module_init(limit_init);
 module_exit(limit_exit);

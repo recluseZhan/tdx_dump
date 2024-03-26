@@ -5,19 +5,19 @@
 #include <sys/types.h>
 
 void main(){
-    int a = 0;
-    printf("%lx\n",&a);
+    unsigned char a[20]="hello,world!thiswork";
+    printf("%lx\n",a);
     int fd = 0;
     
     pid_t pid=getpid();
-    unsigned long va = &a;
+    unsigned long va = a;
     unsigned long pp[3] = {pid,va,1};
     fd = open(DEVNAME,O_RDWR);
     printf("fd:%d\n",fd);
     read(fd,pp,sizeof(pp));
-    close(fd);   
+    close(fd);  
     
-    getchar();
-    printf("%d\n",a);
+    //getchar();
+    //printf("%d\n",a);
     return 0;
 }
