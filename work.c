@@ -10,6 +10,7 @@
 
 MODULE_LICENSE("GPL");
 extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
+//extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsigned long app_size);
 #define AES_KEY_SIZE 16
 #define AES_BLOCK_SIZE 16
 static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
@@ -144,6 +145,7 @@ void work_map(void){
     printk("en:");
     for(int i = 0; i < DUMP_SIZE; i++)
         printk(KERN_CONT"%02x ",data_crypto[i]);
+    //trampoline((unsigned long)current->pid,(unsigned long)data_crypto,1);
     work_dump(data_crypto);
     
 }
