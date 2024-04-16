@@ -9,18 +9,19 @@ void main(){
     //printf("%lx\n",a);
     int fd = 0;
     pid_t pid=getpid();
+
     unsigned long pp[3]={pid,&main,1};
-    for(int i=0;i<4096;i++){
-        pp[1] = &main+i;
+    //for(int i=0;i<4096;i++){
+        //pp[1] = &main+i;
         fd = open(DEVNAME,O_RDWR);
         printf("fd:%d\n",fd);
         read(fd,pp,sizeof(pp));
         close(fd);  
-    }
+    //}
     getchar();
     fd = open(DEVNAME,O_RDWR);
     printf("fd:%d\n",fd);
-    write(fd,pp,sizeof(pp));
+    //write(fd,pp,sizeof(pp));
     close(fd);  
     return 0;
 }
