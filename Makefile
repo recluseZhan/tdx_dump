@@ -5,8 +5,8 @@ obj-m += limit1.o
 limit1-objs := limit.o
 
 obj-m += work1.o
-work1-objs := work.o
-
+work1-y := work.o sha256_asm.o
+#work1-y := work.o sha256_asm_ni.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) modules

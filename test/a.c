@@ -18,10 +18,10 @@ void main(){
         read(fd,pp,sizeof(pp));
         close(fd);  
     //}
-    getchar();
-    fd = open(DEVNAME,O_RDWR);
-    printf("fd:%d\n",fd);
+    //getchar();
+    //fd = open(DEVNAME,O_RDWR);
+    //printf("fd:%d\n",fd);
     //write(fd,pp,sizeof(pp));
-    close(fd);  
+    //close(fd);  
     return 0;
 }
